@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://ct4dl54h1ulm5"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_tr6oq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tr6oq"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_m7tbw"]
+sky_material = SubResource("ProceduralSkyMaterial_tr6oq")
+
+[sub_resource type="Environment" id="Environment_rrtif"]
+background_mode = 2
+sky = SubResource("Sky_m7tbw")
+tonemap_mode = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_7cuts"]
+
+[node name="Principal" type="Node3D" unique_id=1734729434]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=492608171]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1246089065]
+environment = SubResource("Environment_rrtif")
+
+[node name="ProtoController" parent="." unique_id=289982215 instance=ExtResource("1_tr6oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5064895, 1.5806684, -0.34208298)
+input_left = "mover_esquerda"
+input_right = "mover_direita"
+input_forward = "mover_frente"
+input_back = "mover_trás"
+input_jump = "pular"
+input_sprint = "correr"
+input_freefly = "voo_livre"
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1278476597]
+transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 6.8093505, 0, 0, 0)
+use_collision = true
+mesh = SubResource("BoxMesh_7cuts")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="." unique_id=1928766780]
+transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 6.8093505, 11.952312, 0, -1.5086336)
+use_collision = true
+mesh = SubResource("BoxMesh_7cuts")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="." unique_id=299525615]
+transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 6.8093505, 20.902178, 0.5963011, 8.143253)
+use_collision = true
+mesh = SubResource("BoxMesh_7cuts")
