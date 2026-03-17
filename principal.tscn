@@ -26,7 +26,7 @@ shadow_enabled = true
 environment = SubResource("Environment_rrtif")
 
 [node name="ProtoController" parent="." unique_id=289982215 instance=ExtResource("1_tr6oq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5064895, 1.5806684, -0.34208298)
+transform = Transform3D(-0.07772827, 0, -0.9969746, 0, 1, 0, 0.9969746, 0, -0.07772827, -2.255829, 0.54030323, -0.34208298)
 input_left = "mover_esquerda"
 input_right = "mover_direita"
 input_forward = "mover_frente"
@@ -34,6 +34,7 @@ input_back = "mover_trás"
 input_jump = "pular"
 input_sprint = "correr"
 input_freefly = "voo_livre"
+spawn_point = Vector3(-2.256, 2, -0.342)
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1278476597]
 transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 6.8093505, 0, 0, 0)
@@ -41,11 +42,47 @@ use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
 
 [node name="CSGMesh3D2" type="CSGMesh3D" parent="." unique_id=1928766780]
-transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 6.8093505, 11.952312, 0, -1.5086336)
+transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 3.8284125, 11.952312, 0, -1.5086336)
+use_collision = true
+mesh = SubResource("BoxMesh_7cuts")
+metadata/_edit_group_ = true
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="." unique_id=299525615]
+transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 4.039668, 20.902178, 0.5963011, 4.413801)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
 
-[node name="CSGMesh3D3" type="CSGMesh3D" parent="." unique_id=299525615]
-transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 6.8093505, 20.902178, 0.5963011, 8.143253)
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="." unique_id=515975270]
+transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 6.8093505, 29.672714, 0.5963011, -5.1370735)
+use_collision = true
+mesh = SubResource("BoxMesh_7cuts")
+
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="." unique_id=918539538]
+transform = Transform3D(3.2218318, 0, 0, 0, 1, 0, 0, 0, 0.8433002, 37.49256, 0.5963011, -5.1370735)
+use_collision = true
+mesh = SubResource("BoxMesh_7cuts")
+
+[node name="CSGMesh3D6" type="CSGMesh3D" parent="." unique_id=1235590554]
+transform = Transform3D(3.2218318, 0, 0, 0, 1, 0, 0, 0, 0.8433002, 43.245148, 1.1091042, -4.0603113)
+use_collision = true
+mesh = SubResource("BoxMesh_7cuts")
+
+[node name="CSGMesh3D7" type="CSGMesh3D" parent="." unique_id=549697935]
+transform = Transform3D(3.2218318, 0, 0, 0, 1, 0, 0, 0, 0.8433002, 48.290363, 1.5472491, -6.3613997)
+use_collision = true
+mesh = SubResource("BoxMesh_7cuts")
+
+[node name="CSGMesh3D8" type="CSGMesh3D" parent="." unique_id=1945979415]
+transform = Transform3D(1.0853188, 0, 0, 0, 1, 0, 0, 0, 0.8433002, 53.7108, 1.5472491, -6.1370735)
+use_collision = true
+mesh = SubResource("BoxMesh_7cuts")
+
+[node name="CSGMesh3D9" type="CSGMesh3D" parent="." unique_id=1098330888]
+transform = Transform3D(-1.5673145e-08, 0, 7.542193, 0, 1, 0, -0.35855976, 0, -3.2967972e-07, 61.85045, 1.5472491, -6.144939)
+use_collision = true
+mesh = SubResource("BoxMesh_7cuts")
+
+[node name="CSGMesh3D10" type="CSGMesh3D" parent="." unique_id=242357072]
+transform = Transform3D(-6.488837e-09, 0, 7.4195437, 0, 1, 0, -0.14844729, 0, -3.2431853e-07, 68.88918, 1.5472491, -6.144939)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")

@@ -12,9 +12,9 @@ extends CharacterBody3D
 ## Can we press to jump?
 @export var can_jump : bool = true
 ## Can we hold to run?
-@export var can_sprint : bool = false
+@export var can_sprint : bool = true
 ## Can we press to enter freefly mode (noclip)?
-@export var can_freefly : bool = false
+@export var can_freefly : bool = true
 
 @export_group("Speeds")
 ## Look around rotation speed.
@@ -77,6 +77,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			disable_freefly()
 
 func _physics_process(delta: float) -> void:
+	
+	
+	check_fall() # oi
+	
+	
 	# If freeflying, handle freefly and nothing else
 	if can_freefly and freeflying:
 		var input_dir := Input.get_vector(input_left, input_right, input_forward, input_back)
@@ -176,3 +181,29 @@ func check_input_mappings():
 	if can_freefly and not InputMap.has_action(input_freefly):
 		push_error("Freefly disabled. No InputAction found for input_freefly: " + input_freefly)
 		can_freefly = false
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+################ daq pra baixo é tudo nosso #####################
+
+@export_group("Fall Reset")
+## A altura (Y) que teletransporta o player.
+@export var fall_limit : float = -7.5
+## A posição para onde o player volta.
+@export var spawn_point : Vector3 = Vector3(0, 2, 0)
+
+func check_fall():
+	# Se a nossa posição Y for menor que o limite definido...
+	if global_position.y < fall_limit:
+		# Movemos o player para o spawn_point
+		global_position = spawn_point
+		# Zeramos a velocidade para ele não continuar caindo no novo lugar
+		velocity = Vector3.ZERO
