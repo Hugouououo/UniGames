@@ -55,7 +55,12 @@ use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
 
 [node name="CSGMesh3D4" type="CSGMesh3D" parent="." unique_id=515975270]
-transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 6.8093505, 29.672714, 0.5963011, -5.1370735)
+transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 6.8093505, 29.238152, 0.5963011, -5.1370735)
+use_collision = true
+mesh = SubResource("BoxMesh_7cuts")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="CSGMesh3D4" unique_id=639485537]
+transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 6.8093505, 9.982098, 0.113949776, -0.83201784)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
 
