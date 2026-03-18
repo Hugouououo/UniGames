@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ct4dl54h1ulm5"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_tr6oq"]
+[ext_resource type="PackedScene" uid="uid://dgmbmn8hqu8wp" path="res://interface_controles.tscn" id="2_m7tbw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tr6oq"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -27,12 +28,13 @@ environment = SubResource("Environment_rrtif")
 
 [node name="ProtoController" parent="." unique_id=289982215 instance=ExtResource("1_tr6oq")]
 transform = Transform3D(-0.07772827, 0, -0.9969746, 0, 1, 0, 0.9969746, 0, -0.07772827, -2.255829, 0.54030323, -0.34208298)
+input_dash = "correr"
 input_left = "mover_esquerda"
 input_right = "mover_direita"
 input_forward = "mover_frente"
 input_back = "mover_trás"
 input_jump = "pular"
-input_sprint = "correr"
+input_sprint = ""
 input_freefly = "voo_livre"
 spawn_point = Vector3(-2.256, 2, -0.342)
 
@@ -86,3 +88,6 @@ mesh = SubResource("BoxMesh_7cuts")
 transform = Transform3D(-6.488837e-09, 0, 7.4195437, 0, 1, 0, -0.14844729, 0, -3.2431853e-07, 68.88918, 1.5472491, -6.144939)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
+
+[node name="InterfaceControles" parent="." unique_id=263033336 instance=ExtResource("2_m7tbw")]
+mouse_filter = 2

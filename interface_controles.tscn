@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dgmbmn8hqu8wp"]
+
+[node name="InterfaceControles" type="Control" unique_id=263033336]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelEsquerda" type="Label" parent="." unique_id=1388518975]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.16059028
+anchor_bottom = 0.19444445
+text = "WASD - Mover
+Espaço - Pular
+Shift - Dash"
+metadata/_edit_use_anchors_ = true

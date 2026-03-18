@@ -16,6 +16,32 @@ extends CharacterBody3D
 ## Can we press to enter freefly mode (noclip)?
 @export var can_freefly : bool = true
 
+#########################################################################
+###################   MODIFICAÇÕES: DASH SUAVE   ########################
+#########################################################################
+@export_group("Dash Settings")
+## O personagem pode dar dash?
+@export var can_dash : bool = true
+## Força do impulso inicial do dash.
+@export var dash_speed : float = 50.0
+## Duração do impulso (em segundos).
+@export var dash_duration : float = 0.2
+## Tempo de espera para usar de novo (em segundos).
+@export var dash_cooldown : float = 0.8
+## Suavidade da desaceleração (quanto maior, mais brusco volta ao normal).
+@export var dash_smoothness : float = 12.0
+
+@export_group("Input Actions")
+## Nome da ação de Input para o Dash.
+@export var input_dash : String = "dash"
+
+# Variáveis internas para o funcionamento do dash
+var is_dashing : bool = false
+var can_dash_again : bool = true
+var dash_timer : Timer
+var cooldown_timer : Timer
+#########################################################################
+
 @export_group("Speeds")
 ## Look around rotation speed.
 @export var look_speed : float = 0.002
@@ -57,6 +83,22 @@ func _ready() -> void:
 	check_input_mappings()
 	look_rotation.y = rotation.y
 	look_rotation.x = head.rotation.x
+	
+	#####################################################################
+	################### CONFIGURAÇÃO DOS TIMERS (DASH) ##################
+	# Criamos os timers via código para facilitar a instalação do script
+	dash_timer = Timer.new()
+	dash_timer.one_shot = true
+	dash_timer.wait_time = dash_duration
+	dash_timer.timeout.connect(_on_dash_timer_timeout)
+	add_child(dash_timer)
+	
+	cooldown_timer = Timer.new()
+	cooldown_timer.one_shot = true
+	cooldown_timer.wait_time = dash_cooldown
+	cooldown_timer.timeout.connect(_on_cooldown_timer_timeout)
+	add_child(cooldown_timer)
+	#####################################################################
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Mouse capturing
@@ -78,9 +120,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	
-	check_fall() # oi
-	
+	check_fall()
 	
 	# If freeflying, handle freefly and nothing else
 	if can_freefly and freeflying:
@@ -106,11 +146,29 @@ func _physics_process(delta: float) -> void:
 	else:
 		move_speed = base_speed
 
-	# Apply desired movement to velocity
+	#####################################################################
+	################### LÓGICA DE MOVIMENTAÇÃO E DASH ###################
 	if can_move:
 		var input_dir := Input.get_vector(input_left, input_right, input_forward, input_back)
 		var move_dir := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-		if move_dir:
+		
+		# 1. DISPARAR O DASH
+		if can_dash and can_dash_again and Input.is_action_just_pressed(input_dash) and move_dir != Vector3.ZERO:
+			is_dashing = true
+			can_dash_again = false
+			dash_timer.start()
+			# Impulso inicial forte
+			velocity.x = move_dir.x * dash_speed
+			velocity.z = move_dir.z * dash_speed
+		
+		# 2. SE ESTIVER EM DASH (SUAVIZAÇÃO)
+		elif is_dashing:
+			# Usamos lerp para reduzir a velocidade do dash gradualmente até a velocidade normal
+			velocity.x = lerp(velocity.x, move_dir.x * move_speed, dash_smoothness * delta)
+			velocity.z = lerp(velocity.z, move_dir.z * move_speed, dash_smoothness * delta)
+			
+		# 3. MOVIMENTO NORMAL
+		elif move_dir:
 			velocity.x = move_dir.x * move_speed
 			velocity.z = move_dir.z * move_speed
 		else:
@@ -118,15 +176,14 @@ func _physics_process(delta: float) -> void:
 			velocity.z = move_toward(velocity.z, 0, move_speed)
 	else:
 		velocity.x = 0
-		velocity.y = 0
+		velocity.z = 0
+	#####################################################################
 	
 	# Use velocity to actually move
 	move_and_slide()
 
 
 ## Rotate us to look around.
-## Base of controller rotates around y (left/right). Head rotates around x (up/down).
-## Modifies look_rotation based on rot_input, then resets basis and rotates by look_rotation.
 func rotate_look(rot_input : Vector2):
 	look_rotation.x -= rot_input.y * look_speed
 	look_rotation.x = clamp(look_rotation.x, deg_to_rad(-85), deg_to_rad(85))
@@ -158,7 +215,6 @@ func release_mouse():
 
 
 ## Checks if some Input Actions haven't been created.
-## Disables functionality accordingly.
 func check_input_mappings():
 	if can_move and not InputMap.has_action(input_left):
 		push_error("Movement disabled. No InputAction found for input_left: " + input_left)
@@ -181,29 +237,33 @@ func check_input_mappings():
 	if can_freefly and not InputMap.has_action(input_freefly):
 		push_error("Freefly disabled. No InputAction found for input_freefly: " + input_freefly)
 		can_freefly = false
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-################ daq pra baixo é tudo nosso #####################
+	
+	#####################################################################
+	# Verificação do Dash (nossa parte)
+	if can_dash and not InputMap.has_action(input_dash):
+		push_error("Dash disabled. No InputAction found for input_dash: " + input_dash)
+		can_dash = false
+	#####################################################################
+
+#########################################################################
+###################     FUNÇÕES EXTRAS (NOSSAS)      ####################
+#########################################################################
 
 @export_group("Fall Reset")
-## A altura (Y) que teletransporta o player.
 @export var fall_limit : float = -7.5
-## A posição para onde o player volta.
 @export var spawn_point : Vector3 = Vector3(0, 2, 0)
 
 func check_fall():
-	# Se a nossa posição Y for menor que o limite definido...
 	if global_position.y < fall_limit:
-		# Movemos o player para o spawn_point
 		global_position = spawn_point
-		# Zeramos a velocidade para ele não continuar caindo no novo lugar
 		velocity = Vector3.ZERO
+
+# Chamado quando o tempo de "impulso" acaba
+func _on_dash_timer_timeout():
+	is_dashing = false
+	cooldown_timer.start()
+
+# Chamado quando o tempo de espera acaba
+func _on_cooldown_timer_timeout():
+	can_dash_again = true
+#########################################################################
