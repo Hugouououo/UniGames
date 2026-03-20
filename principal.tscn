@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_tr6oq"]
 [ext_resource type="PackedScene" uid="uid://dgmbmn8hqu8wp" path="res://interface_controles.tscn" id="2_m7tbw"]
+[ext_resource type="Script" uid="uid://c0skoh5sqnvj2" path="res://lava.gd" id="3_rrtif"]
+[ext_resource type="Material" uid="uid://ctbgkj07iqqmb" path="res://lava_material.tres" id="4_7cuts"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tr6oq"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -17,6 +19,8 @@ tonemap_mode = 2
 
 [sub_resource type="BoxMesh" id="BoxMesh_7cuts"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_emcp4"]
+
 [node name="Principal" type="Node3D" unique_id=1734729434]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=492608171]
@@ -26,17 +30,16 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1246089065]
 environment = SubResource("Environment_rrtif")
 
-[node name="ProtoController" parent="." unique_id=289982215 instance=ExtResource("1_tr6oq")]
-transform = Transform3D(-0.07772827, 0, -0.9969746, 0, 1, 0, 0.9969746, 0, -0.07772827, -2.255829, 0.54030323, -0.34208298)
-input_dash = "correr"
+[node name="ProtoController" parent="." unique_id=289982215 groups=["Player"] instance=ExtResource("1_tr6oq")]
+transform = Transform3D(-0.0078538805, 0, -0.9999692, 0, 1, 0, 0.9999692, 0, -0.0078538805, -1.377679, 0.54030323, 0.05881147)
+spawn_point = Vector3(-2.256, 2, -0.342)
 input_left = "mover_esquerda"
 input_right = "mover_direita"
 input_forward = "mover_frente"
 input_back = "mover_trás"
 input_jump = "pular"
-input_sprint = ""
+input_sprint = "correr"
 input_freefly = "voo_livre"
-spawn_point = Vector3(-2.256, 2, -0.342)
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1278476597]
 transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 6.8093505, 0, 0, 0)
@@ -96,3 +99,13 @@ mesh = SubResource("BoxMesh_7cuts")
 
 [node name="InterfaceControles" parent="." unique_id=263033336 instance=ExtResource("2_m7tbw")]
 mouse_filter = 2
+
+[node name="Lava" type="Area3D" parent="." unique_id=1239579926]
+script = ExtResource("3_rrtif")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Lava" unique_id=322323327]
+transform = Transform3D(104.969086, 0, 0, 0, 10, 0, 0, 0, 100, 51.52736, -12.520059, 2.466652)
+material_override = ExtResource("4_7cuts")
+cast_shadow = 0
+size = Vector3(1.7626953, 1, 1)
+material = SubResource("StandardMaterial3D_emcp4")
