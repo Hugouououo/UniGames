@@ -10,3 +10,7 @@ func _on_body_entered(body):
 		print("Lava atingida! Reiniciando a fase...")
 
 		get_tree().reload_current_scene()
+
+
+# vamo ver de botar um som?
+# Hugo
