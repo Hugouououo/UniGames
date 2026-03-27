@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://csibt2vestppy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5yphk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_weht8"]
+
+[node name="CuboFisico" type="Node3D" unique_id=1660948414]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=34163980]
+mesh = SubResource("BoxMesh_5yphk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=690089363]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=415567201]
+shape = SubResource("BoxShape3D_weht8")
