@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dgmbmn8hqu8wp"]
 
+[ext_resource type="Script" uid="uid://na3sftb27hqq" path="res://interface_controles.gd" id="1_qow4i"]
+
 [node name="InterfaceControles" type="Control" unique_id=263033336]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qow4i")
 
 [node name="LabelEsquerda" type="Label" parent="." unique_id=1388518975]
 layout_mode = 1
@@ -17,3 +20,16 @@ text = "WASD - Mover
 Espaço - Pular
 Shift - Dash"
 metadata/_edit_use_anchors_ = true
+
+[node name="LabelCenter" type="Label" parent="." unique_id=228983018]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -26.5
+offset_right = 26.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "00:00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
