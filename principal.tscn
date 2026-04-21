@@ -322,7 +322,7 @@ mesh = SubResource("BoxMesh_ep5lw")
 material = SubResource("StandardMaterial3D_1g4wj")
 
 [node name="CSGMesh3D40" type="CSGMesh3D" parent="." unique_id=1189633946]
-transform = Transform3D(1.0318615, 0, -1.971077, 0, 1, 0, 1.8344766, 0, 1.1086967, 158.14117, 14.474244, 4.6215734)
+transform = Transform3D(1.0318615, 0, -1.971077, 0, 1, 0, 1.8344766, 0, 1.1086967, 159.0192, 14.474244, 4.6215734)
 use_collision = true
 mesh = SubResource("BoxMesh_ep5lw")
 material = SubResource("StandardMaterial3D_1g4wj")
@@ -360,7 +360,7 @@ mesh = SubResource("BoxMesh_ep5lw")
 material = SubResource("StandardMaterial3D_ep5lw")
 
 [node name="CSGMesh3D26" type="CSGMesh3D" parent="." unique_id=1204823064]
-transform = Transform3D(413.3626, 0, 0, 0, 100, 0, 0, 0, -0.013800808, 104.16946, 22.529163, -41.402588)
+transform = Transform3D(413.3626, 0, 0, 0, 100, 0, 0, 0, -0.013800808, 106.16566, 22.529163, -41.759933)
 use_collision = true
 mesh = SubResource("BoxMesh_ep5lw")
 material = SubResource("StandardMaterial3D_ep5lw")
@@ -382,6 +382,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.963692, 0, 0)
 script = ExtResource("7_jpj0s")
 
 [node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="Plataforme_mov2" unique_id=1981915890]
+visible = false
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="Plataforme_mov2" unique_id=1231222117]
 transform = Transform3D(6.93, 0, 0, 0, 1, 0, 0, 0, 6.8, 112.75616, 0, 19.721432)
