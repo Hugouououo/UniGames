@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://xv2tsckrsff2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmrj5"]
+albedo_color = Color(0.89492244, 0.89492244, 0.8949224, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qmnks"]
+material = SubResource("StandardMaterial3D_bmrj5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7xu1k"]
+albedo_color = Color(0.40832946, 0.40832946, 0.40832946, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bmrj5"]
+material = SubResource("StandardMaterial3D_7xu1k")
+
+[node name="biblioteca_cores" type="Node3D" unique_id=601728892]
+
+[node name="Chao" type="MeshInstance3D" parent="." unique_id=1872279022]
+mesh = SubResource("BoxMesh_qmnks")
+
+[node name="Parede" type="MeshInstance3D" parent="." unique_id=601161210]
+mesh = SubResource("BoxMesh_bmrj5")
