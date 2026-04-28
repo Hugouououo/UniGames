@@ -12,10 +12,12 @@ func _ready():
 	area.body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body):
+	print("Entrou na àrea", body.name)
+	
 	if ativado:
 		return
 	
-	if body.is_in_group("player"):
+	if body.is_in_group("Player"):
 		ativado = true
 		sumir()
 

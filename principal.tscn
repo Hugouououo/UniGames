@@ -14,7 +14,8 @@
 [ext_resource type="Script" uid="uid://dy7o76toplnps" path="res://plataforme_inv_4.gd" id="12_ynwup"]
 [ext_resource type="Script" uid="uid://pdgtadjsggx3" path="res://plataforme_inv_5.gd" id="13_rjysx"]
 [ext_resource type="Script" uid="uid://xb8q6bu3np4d" path="res://plataforme_inv_6.gd" id="14_75vob"]
-[ext_resource type="Script" uid="uid://b84sqt561mx4m" path="res://plataforme_some.gd" id="15_eq8du"]
+[ext_resource type="Script" uid="uid://c4ke40i205kcj" path="res://plataforma_some.gd" id="15_cxgpi"]
+[ext_resource type="Script" uid="uid://b3h37neodvprt" path="res://pause_menu.gd" id="16_cxgpi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tr6oq"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -84,12 +85,6 @@ size = Vector3(6.93, 1, 6.8)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jtgv"]
 albedo_color = Color(0.3968904, 0.6514348, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_cxgpi"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_eq8du"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ynwup"]
 
 [node name="Principal" type="Node3D" unique_id=1734729434]
 
@@ -536,23 +531,82 @@ transform = Transform3D(6.93, 0, 0, 0, 1, 0, 0, 0, 6.8, 110.86526, 12.355521, -1
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
 
-[node name="Plataforme_some" type="StaticBody3D" parent="." unique_id=2105004004]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8288307)
-script = ExtResource("15_eq8du")
+[node name="Plataforma_some" type="CSGMesh3D" parent="." unique_id=368625664]
+transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 0.8, 96.278, 12.355521, -13.168861)
+use_collision = true
+mesh = SubResource("BoxMesh_7cuts")
+script = ExtResource("15_cxgpi")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Plataforme_some" unique_id=755878051]
-transform = Transform3D(6.9, 0, 0, 0, 1, 0, 0, 0, 4.16, 99.54, 12.22, -12.9)
-mesh = SubResource("BoxMesh_cxgpi")
+[node name="Plataforma_some2" type="CSGMesh3D" parent="." unique_id=223458114]
+transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 0.8, 77.62857, 12.355521, -23.29013)
+use_collision = true
+mesh = SubResource("BoxMesh_7cuts")
+script = ExtResource("15_cxgpi")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Plataforme_some" unique_id=1495636354]
-transform = Transform3D(6.9, 0, 0, 0, 2, 0, 0, 0, 4.16, 99.54, 12.218187, -12.9)
-shape = SubResource("BoxShape3D_eq8du")
+[node name="Plataforma_some3" type="CSGMesh3D" parent="." unique_id=926609485]
+transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 0.8, 60.210114, 12.355521, -13.208028)
+use_collision = true
+mesh = SubResource("BoxMesh_7cuts")
+script = ExtResource("15_cxgpi")
 
-[node name="Area3D" type="Area3D" parent="Plataforme_some" unique_id=1775024419]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7815857, 7.5226603, -8.168979)
-collision_layer = 2
+[node name="Plataforma_some4" type="CSGMesh3D" parent="." unique_id=1144035833]
+transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 0.8, 45.73689, 12.355521, -23.395967)
+use_collision = true
+mesh = SubResource("BoxMesh_7cuts")
+script = ExtResource("15_cxgpi")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Plataforme_some/Area3D" unique_id=691072205]
-transform = Transform3D(6.9, 0, 0, 0, 2, 0, 0, 0, 4.16, 99.54, 12.21, -12.9)
-shape = SubResource("BoxShape3D_ynwup")
-disabled = true
+[node name="Plataforma_some5" type="CSGMesh3D" parent="." unique_id=800531698]
+transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 0.8, 30.694588, 12.355521, -13.221604)
+use_collision = true
+mesh = SubResource("BoxMesh_7cuts")
+script = ExtResource("15_cxgpi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=513907639]
+
+[node name="PauseMenu" type="Panel" parent="CanvasLayer" unique_id=266877664]
+process_mode = 3
+visible = false
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -552.0
+offset_top = -348.0
+offset_right = -552.0
+offset_bottom = -348.0
+grow_vertical = 2
+script = ExtResource("16_cxgpi")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/PauseMenu" unique_id=968171024]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Panel" type="Panel" parent="CanvasLayer/PauseMenu" unique_id=520226332]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PauseMenu/Panel" unique_id=1725576807]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseMenu/Panel/HBoxContainer" unique_id=1952948187]
+layout_mode = 2
+
+[node name="ButtonContinuar" type="Button" parent="CanvasLayer/PauseMenu/Panel/HBoxContainer/VBoxContainer" unique_id=402720787]
+layout_mode = 2
+
+[node name="ButtonDesistir" type="Button" parent="CanvasLayer/PauseMenu/Panel/HBoxContainer/VBoxContainer" unique_id=672841098]
+layout_mode = 2
+
+[node name="VBoxControles" type="VBoxContainer" parent="CanvasLayer/PauseMenu/Panel/HBoxContainer" unique_id=447582774]
+layout_mode = 2
+
+[node name="LabelControles" type="Label" parent="CanvasLayer/PauseMenu/Panel/HBoxContainer/VBoxControles" unique_id=1336169497]
+layout_mode = 2

@@ -151,6 +151,13 @@ func _physics_process(delta: float) -> void:
 		velocity.z = 0
 	
 	move_and_slide()
+	
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		
+		if collider and collider.has_method("iniciar_sumir"):
+			collider.iniciar_sumir()
 
 func rotate_look(rot_input : Vector2):
 	look_rotation.x -= rot_input.y * look_speed

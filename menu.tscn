@@ -23,11 +23,19 @@ text = "Jogo de Parkour incrivelmente FODA"
 
 [node name="LineNome" type="LineEdit" parent="VBoxContainer" unique_id=2057955113]
 layout_mode = 2
-text = "Digite seu nome:"
+placeholder_text = "Digite seu nome:"
 
 [node name="LineRA" type="LineEdit" parent="VBoxContainer" unique_id=770813102]
 layout_mode = 2
-text = "Digite seu RA:"
+placeholder_text = "Digite seu RA:"
+
+[node name="LabelErro" type="Label" parent="VBoxContainer" unique_id=1240838569]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8627451, 0, 0, 1)
+text = "Preencha nome e RA!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ButtonComecar" type="Button" parent="VBoxContainer" unique_id=1812248784]
 layout_mode = 2
