@@ -531,7 +531,7 @@ transform = Transform3D(6.93, 0, 0, 0, 1, 0, 0, 0, 6.8, 110.86526, 12.355521, -1
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
 
-[node name="Plataforma_some" type="CSGMesh3D" parent="." unique_id=368625664]
+[node name="Plataforma_some1" type="CSGMesh3D" parent="." unique_id=368625664]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 0.8, 96.278, 12.355521, -13.168861)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
@@ -566,7 +566,7 @@ script = ExtResource("15_cxgpi")
 [node name="PauseMenu" type="Panel" parent="CanvasLayer" unique_id=266877664]
 process_mode = 3
 visible = false
-anchors_preset = -1
+anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
