@@ -1,6 +1,6 @@
 extends CSGMesh3D
 
-@export var tempo_para_sumir := 2.0
+@export var tempo_para_sumir := 1.0
 @export var tempo_para_voltar := 3.0
 
 var ativado := false
