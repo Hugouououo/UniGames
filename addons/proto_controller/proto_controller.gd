@@ -170,16 +170,15 @@ func rotate_look(rot_input : Vector2):
 
 func check_fall():
 	if global_position.y < fall_limit:
-		# Reposiciona o jogador
-		global_position = spawn_point
+		if Global.checkpoint_pos != Vector3.ZERO:
+			# Teleporta para o checkpoint salvo
+			global_position = Global.checkpoint_pos 
+		else:
+			# Se não tiver checkpoint, volta para o início
+			global_position = spawn_point 
 		
-		# Zera o movimento
 		velocity = Vector3.ZERO
-		
-		# Restaura exatamente a rotação que estava na cena ao começar
 		look_rotation = initial_look_rotation
-		
-		# Aplica a rotação visualmente
 		rotate_look(Vector2.ZERO)
 
 func _on_dash_timer_timeout():

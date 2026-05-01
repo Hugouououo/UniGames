@@ -21,4 +21,9 @@ func _on_pressed():
 	Global.nome = nome
 	Global.ra = ra
 	
+	# ADICIONE ESTA LINHA AQUI:
+	Global.checkpoint_pos = Vector3.ZERO
+	
 	get_tree().change_scene_to_file("res://principal.tscn")
+	
+	

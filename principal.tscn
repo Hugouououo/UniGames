@@ -7,6 +7,7 @@
 [ext_resource type="MeshLibrary" uid="uid://styub6w4sdci" path="res://labirinto.tres" id="5_cxgpi"]
 [ext_resource type="Script" uid="uid://bdu5073ctjf3b" path="res://lab.gd" id="6_jpj0s"]
 [ext_resource type="Script" uid="uid://broec2f2fig1r" path="res://plataforma_mov.gd" id="7_jpj0s"]
+[ext_resource type="Script" uid="uid://dg8rvwtiepkpj" path="res://checkpoint_1.gd" id="7_ynwup"]
 [ext_resource type="PackedScene" uid="uid://xv2tsckrsff2" path="res://biblioteca_cores.tscn" id="8_qlig8"]
 [ext_resource type="Script" uid="uid://bnd4q1jvmbrcg" path="res://plataforme_inv_1.gd" id="9_iuule"]
 [ext_resource type="Script" uid="uid://cmwok5toqjl58" path="res://plataforme_inv_2.gd" id="10_eq8du"]
@@ -87,6 +88,8 @@ size = Vector3(6.93, 1, 6.8)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jtgv"]
 albedo_color = Color(0.3968904, 0.6514348, 1, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ynwup"]
 
 [node name="Principal" type="Node3D" unique_id=1734729434]
 
@@ -615,3 +618,19 @@ layout_mode = 2
 
 [node name="LabelControles" type="Label" parent="CanvasLayer/PauseMenu/Panel/HBoxContainer/VBoxControles" unique_id=1336169497]
 layout_mode = 2
+
+[node name="Checkpoint" type="Area3D" parent="." unique_id=1645304736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.885164, 1.1136773, -2.2089736)
+script = ExtResource("7_ynwup")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint" unique_id=659354127]
+transform = Transform3D(-0.04098947, 0.055850632, -0.9975974, 0, 0.9984365, 0.05589761, 0.9991596, 0.0022912133, -0.040925384, 92.25714, 3.4085538, 22.679312)
+shape = SubResource("SphereShape3D_ynwup")
+
+[node name="Checkpoint2" type="Area3D" parent="." unique_id=1483285190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.885164, 1.1136773, -2.2089736)
+script = ExtResource("7_ynwup")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint2" unique_id=1010992438]
+transform = Transform3D(0.3401692, 0.07303186, -0.937524, 0, 0.99697965, 0.07766337, 0.94036424, -0.026418686, 0.3391418, -1.3213911, 1.042294, 1.817301)
+shape = SubResource("SphereShape3D_ynwup")
