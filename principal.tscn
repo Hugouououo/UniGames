@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_tr6oq"]
 [ext_resource type="Script" uid="uid://bcwhlgv6ofvqw" path="res://area_3d.gd" id="2_cxgpi"]
-[ext_resource type="PackedScene" path="res://interface_controles.tscn" id="2_m7tbw"]
+[ext_resource type="PackedScene" uid="uid://dgmbmn8hqu8wp" path="res://interface_controles.tscn" id="2_m7tbw"]
 [ext_resource type="Script" uid="uid://c0skoh5sqnvj2" path="res://lava.gd" id="3_rrtif"]
 [ext_resource type="Material" uid="uid://ctbgkj07iqqmb" path="res://lava_material.tres" id="4_7cuts"]
 [ext_resource type="MeshLibrary" uid="uid://styub6w4sdci" path="res://labirinto.tres" id="5_cxgpi"]
@@ -192,6 +192,10 @@ mesh = SubResource("BoxMesh_7cuts")
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1361863849]
 
 [node name="InterfaceControles" parent="CanvasLayer2" unique_id=263033336 instance=ExtResource("2_m7tbw")]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = -1.0
 mouse_filter = 2
 
 [node name="Lava" type="Area3D" parent="." unique_id=1239579926]
@@ -458,7 +462,6 @@ script = ExtResource("7_jpj0s")
 
 [node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="Plataforme_mov5" unique_id=1326224690]
 
-
 [node name="CSGMesh3D2" type="CSGMesh3D" parent="Plataforme_mov5" unique_id=2042175376]
 transform = Transform3D(2.68607, 0, 0, 0, 1, 0, 0, 0, 6.8, 182.46173, -0.7903881, 12.08427)
 use_collision = true
@@ -604,4 +607,5 @@ script = ExtResource("7_ynwup")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint2" unique_id=1010992438]
 transform = Transform3D(0.3401692, 0.07303186, -0.937524, 0, 0.99697965, 0.07766337, 0.94036424, -0.026418686, 0.3391418, -1.3213911, 1.042294, 1.817301)
 shape = SubResource("SphereShape3D_ynwup")
+
 [node name="Timer" parent="." unique_id=797562577 instance=ExtResource("17_ynwup")]
