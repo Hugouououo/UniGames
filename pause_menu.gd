@@ -1,7 +1,7 @@
 extends Control
 
-@onready var button_continuar: Button = $Panel/HBoxContainer/VBoxContainer/ButtonContinuar
-@onready var button_desistir: Button = $Panel/HBoxContainer/VBoxContainer/ButtonDesistir
+@onready var button_continuar: Button = $Panel/HBoxContainer/VBoxBotoes/ButtonContinuar
+@onready var button_desistir: Button = $Panel/HBoxContainer/VBoxBotoes/ButtonDesistir
 
 var pausado := false
 

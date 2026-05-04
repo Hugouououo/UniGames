@@ -5,6 +5,10 @@ var time_elapsed := 0.0
 
 @export var label: Label
 
+func _ready():
+	if label == null and has_node("Label"):
+		label = $Label
+
 func _process(delta):
 	if timer_started:
 		time_elapsed += delta
