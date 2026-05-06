@@ -34,6 +34,16 @@ tonemap_mode = 2
 
 [sub_resource type="BoxMesh" id="BoxMesh_7cuts"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y3mbs"]
+albedo_color = Color(1, 1, 0, 1)
+metallic = 1.0
+metallic_specular = 1.0
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 187.3
+emission_operator = 1
+emission_on_uv2 = true
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_cxgpi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_emcp4"]
@@ -93,12 +103,18 @@ size = Vector3(6.93, 1, 6.8)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jtgv"]
 albedo_color = Color(0.3968904, 0.6514348, 1, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m8wxu"]
+albedo_color = Color(0, 0.9411765, 0.28627452, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrosl"]
+albedo_color = Color(1, 0.1764706, 1, 1)
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_ynwup"]
 
 [node name="Principal" type="Node3D" unique_id=1734729434]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=492608171]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(-0.8660254, -0.49969822, -0.017371304, 1.4901161e-08, -0.034742594, 0.9993963, -0.50000006, 0.8655026, 0.030087948, 0, 0, 0)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1246089065]
@@ -125,6 +141,7 @@ mesh = SubResource("BoxMesh_7cuts")
 transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 6.8093505, -14.672302, 8.881335, -16.65587)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
+material = SubResource("StandardMaterial3D_y3mbs")
 
 [node name="Area3D" type="Area3D" parent="Final" unique_id=993436593]
 script = ExtResource("2_cxgpi")
@@ -132,6 +149,7 @@ script = ExtResource("2_cxgpi")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Final/Area3D" unique_id=287463423]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11931038, 0)
 shape = SubResource("BoxShape3D_cxgpi")
+debug_color = Color(0.9372437, 0.16844162, 0.47434574, 0.41960785)
 
 [node name="CSGMesh3D44" type="CSGMesh3D" parent="." unique_id=1410568543]
 transform = Transform3D(0.3, 0, 0, 0, 1, 0, 0, 0, 0.3, 15.313129, 11.936365, -13.342635)
@@ -475,6 +493,7 @@ script = ExtResource("7_jpj0s")
 [node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="Plataforme_mov6" unique_id=635533031]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plataforme_mov6" unique_id=1033388360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.525342)
 shape = SubResource("BoxShape3D_jpj0s")
 
 [node name="CSGMesh3D2" type="CSGMesh3D" parent="Plataforme_mov6" unique_id=402235620]
@@ -517,42 +536,42 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.012343, -10.827313, 10.143
 transform = Transform3D(0.17971301, 0, 4.160284, 0, 1, 0, -6.9276686, 0, 0.10792346, 179.68083, 13.885108, 3.2247906)
 use_collision = true
 mesh = SubResource("BoxMesh_ep5lw")
-material = SubResource("StandardMaterial3D_1g4wj")
+material = SubResource("StandardMaterial3D_m8wxu")
 script = ExtResource("9_iuule")
 
 [node name="Plataforme_Inv2" type="CSGMesh3D" parent="." unique_id=1337984580]
 transform = Transform3D(0.17971301, 0, 4.160284, 0, 1, 0, -6.9276686, 0, 0.10792346, 165.18877, 13.885108, 3.2247906)
 use_collision = true
 mesh = SubResource("BoxMesh_ep5lw")
-material = SubResource("StandardMaterial3D_1g4wj")
+material = SubResource("StandardMaterial3D_m8wxu")
 script = ExtResource("10_eq8du")
 
 [node name="Plataforme_Inv3" type="CSGMesh3D" parent="." unique_id=1978974449]
 transform = Transform3D(0.17971301, 0, 4.160284, 0, 1, 0, -6.9276686, 0, 0.10792346, 151.34523, 13.885108, 3.2247906)
 use_collision = true
 mesh = SubResource("BoxMesh_ep5lw")
-material = SubResource("StandardMaterial3D_1g4wj")
+material = SubResource("StandardMaterial3D_m8wxu")
 script = ExtResource("11_cxgpi")
 
 [node name="Plataforme_Inv4" type="CSGMesh3D" parent="." unique_id=2091636165]
 transform = Transform3D(0.17971301, 0, 4.160284, 0, 1, 0, -6.9276686, 0, 0.10792346, 137.40768, 13.885108, 3.2247906)
 use_collision = true
 mesh = SubResource("BoxMesh_ep5lw")
-material = SubResource("StandardMaterial3D_1g4wj")
+material = SubResource("StandardMaterial3D_m8wxu")
 script = ExtResource("12_ynwup")
 
 [node name="Plataforme_Inv5" type="CSGMesh3D" parent="." unique_id=1972595835]
 transform = Transform3D(0.17971301, 0, 4.160284, 0, 1, 0, -6.9276686, 0, 0.10792346, 124.916595, 13.885108, 3.2247906)
 use_collision = true
 mesh = SubResource("BoxMesh_ep5lw")
-material = SubResource("StandardMaterial3D_1g4wj")
+material = SubResource("StandardMaterial3D_m8wxu")
 script = ExtResource("13_rjysx")
 
 [node name="Plataforme_Inv6" type="CSGMesh3D" parent="." unique_id=1662876644]
 transform = Transform3D(0.17971301, 0, 4.160284, 0, 1, 0, -6.9276686, 0, 0.10792346, 111.4197, 13.885108, 3.2247906)
 use_collision = true
 mesh = SubResource("BoxMesh_ep5lw")
-material = SubResource("StandardMaterial3D_1g4wj")
+material = SubResource("StandardMaterial3D_m8wxu")
 script = ExtResource("14_75vob")
 
 [node name="CSGMesh3D8" type="CSGMesh3D" parent="." unique_id=1687836996]
@@ -564,30 +583,35 @@ mesh = SubResource("BoxMesh_7cuts")
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 0.8, 96.278, 12.355521, -13.168861)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
+material = SubResource("StandardMaterial3D_jrosl")
 script = ExtResource("15_cxgpi")
 
 [node name="Plataforma_some2" type="CSGMesh3D" parent="." unique_id=223458114]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 0.8, 77.62857, 12.355521, -23.29013)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
+material = SubResource("StandardMaterial3D_jrosl")
 script = ExtResource("15_cxgpi")
 
 [node name="Plataforma_some3" type="CSGMesh3D" parent="." unique_id=926609485]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 0.8, 60.210114, 12.355521, -13.208028)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
+material = SubResource("StandardMaterial3D_jrosl")
 script = ExtResource("15_cxgpi")
 
 [node name="Plataforma_some4" type="CSGMesh3D" parent="." unique_id=1144035833]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 0.8, 45.73689, 12.355521, -23.395967)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
+material = SubResource("StandardMaterial3D_jrosl")
 script = ExtResource("15_cxgpi")
 
 [node name="Plataforma_some5" type="CSGMesh3D" parent="." unique_id=800531698]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 0.8, 30.694588, 12.355521, -13.221604)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
+material = SubResource("StandardMaterial3D_jrosl")
 script = ExtResource("15_cxgpi")
 
 [node name="Pause_menu" parent="." unique_id=1746631569 instance=ExtResource("16_cxgpi")]
