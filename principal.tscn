@@ -109,7 +109,8 @@ albedo_color = Color(0, 0.9411765, 0.28627452, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrosl"]
 albedo_color = Color(1, 0.1764706, 1, 1)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_ynwup"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_75vob"]
+radius = 0.62134767
 
 [node name="Principal" type="Node3D" unique_id=1734729434]
 
@@ -617,19 +618,17 @@ script = ExtResource("15_cxgpi")
 [node name="Pause_menu" parent="." unique_id=1746631569 instance=ExtResource("16_cxgpi")]
 
 [node name="Checkpoint" type="Area3D" parent="." unique_id=1645304736]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.885164, 1.1136773, -2.2089736)
+transform = Transform3D(0.0542761, -0.16830905, 0.9842389, 0, 0.98569185, 0.16855751, -0.998526, -0.009148644, 0.053499512, 105.02089, 3.8756402, 20.386288)
 script = ExtResource("7_ynwup")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint" unique_id=659354127]
-transform = Transform3D(-0.04098947, 0.055850632, -0.9975974, 0, 0.9984365, 0.05589761, 0.9991596, 0.0022912133, -0.040925384, 92.25714, 3.4085538, 22.679312)
-shape = SubResource("SphereShape3D_ynwup")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint" unique_id=68388227]
+shape = SubResource("SphereShape3D_75vob")
 
-[node name="Checkpoint2" type="Area3D" parent="." unique_id=1483285190]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.885164, 1.1136773, -2.2089736)
+[node name="Checkpoint2" type="Area3D" parent="." unique_id=950438678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227.63571, 16.500898, 13.185431)
 script = ExtResource("7_ynwup")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint2" unique_id=1010992438]
-transform = Transform3D(0.3401692, 0.07303186, -0.937524, 0, 0.99697965, 0.07766337, 0.94036424, -0.026418686, 0.3391418, -1.3213911, 1.042294, 1.817301)
-shape = SubResource("SphereShape3D_ynwup")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint2" unique_id=2127094112]
+shape = SubResource("SphereShape3D_75vob")
 
 [node name="Timer" parent="." unique_id=797562577 instance=ExtResource("17_ynwup")]
