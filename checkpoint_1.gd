@@ -27,6 +27,6 @@ func exibir_mensagem_checkpoint():
 		label.visible = true
 		
 		# Espera 1 segundo de forma não bloqueante
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(2.0).timeout
 		
 		label.visible = false

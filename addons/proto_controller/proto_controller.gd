@@ -34,7 +34,7 @@ var cooldown_timer : Timer
 ## Altura Y que ativa o teleporte
 @export var fall_limit : float = -10.0
 ## Posição para onde o jogador será levado
-@export var spawn_point : Vector3 = Vector3(0, 2, 0)
+@export var spawn_point : Vector3 = Vector3(0, 0, 0)
 
 # Variável para guardar como o player estava virado no começo
 var initial_look_rotation : Vector2
@@ -44,10 +44,10 @@ var initial_look_rotation : Vector2
 #########################################################################
 @export_group("Speeds")
 @export var look_speed : float = 0.002
-@export var base_speed : float = 7.0
-@export var jump_velocity : float = 4.5
+@export var base_speed : float = 7.5
+@export var jump_velocity : float = 5
 @export var sprint_speed : float = 10.0
-@export var freefly_speed : float = 25.0
+@export var freefly_speed : float = 35.0
 
 @export_group("Input Actions")
 @export var input_left : String = "ui_left"
