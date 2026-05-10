@@ -10,13 +10,8 @@
 [ext_resource type="Script" uid="uid://broec2f2fig1r" path="res://plataforma_mov.gd" id="7_jpj0s"]
 [ext_resource type="Script" uid="uid://dg8rvwtiepkpj" path="res://checkpoint_1.gd" id="7_ynwup"]
 [ext_resource type="PackedScene" uid="uid://xv2tsckrsff2" path="res://biblioteca_cores.tscn" id="8_qlig8"]
-[ext_resource type="Script" uid="uid://bnd4q1jvmbrcg" path="res://plataforme_inv_1.gd" id="9_iuule"]
-[ext_resource type="Script" uid="uid://cmwok5toqjl58" path="res://plataforme_inv_2.gd" id="10_eq8du"]
-[ext_resource type="Script" uid="uid://ed3kwxmxstl3" path="res://plataforme_inv_3.gd" id="11_cxgpi"]
-[ext_resource type="Script" uid="uid://dy7o76toplnps" path="res://plataforme_inv_4.gd" id="12_ynwup"]
-[ext_resource type="Script" uid="uid://pdgtadjsggx3" path="res://plataforme_inv_5.gd" id="13_rjysx"]
-[ext_resource type="Script" uid="uid://xb8q6bu3np4d" path="res://plataforme_inv_6.gd" id="14_75vob"]
-[ext_resource type="Script" uid="uid://c4ke40i205kcj" path="res://plataforma_some.gd" id="15_cxgpi"]
+[ext_resource type="Script" uid="uid://qgox35yfecs1" path="res://plataforme_inv.gd" id="10_75vob"]
+[ext_resource type="Script" uid="uid://bru63eqjawl2e" path="res://plataforme_some.gd" id="11_iuule"]
 [ext_resource type="PackedScene" uid="uid://c6u6y8eyri7jf" path="res://pause_menu.tscn" id="16_cxgpi"]
 [ext_resource type="PackedScene" uid="uid://cdtmmgxgxnfos" path="res://timer.tscn" id="17_ynwup"]
 
@@ -112,9 +107,11 @@ size = Vector3(6.93, 1, 6.8)
 albedo_color = Color(0.3968904, 0.6514348, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m8wxu"]
+transparency = 1
 albedo_color = Color(0, 0.9411765, 0.28627452, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrosl"]
+transparency = 1
 albedo_color = Color(1, 0.1764706, 1, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_75vob"]
@@ -550,42 +547,51 @@ transform = Transform3D(0.17971301, 0, 4.160284, 0, 1, 0, -6.9276686, 0, 0.10792
 use_collision = true
 mesh = SubResource("BoxMesh_ep5lw")
 material = SubResource("StandardMaterial3D_m8wxu")
-script = ExtResource("9_iuule")
+script = ExtResource("10_75vob")
+tempo_fade = 1.0
+comeca_visivel = true
 
 [node name="Plataforme_Inv2" type="CSGMesh3D" parent="." unique_id=1337984580]
 transform = Transform3D(0.17971301, 0, 4.160284, 0, 1, 0, -6.9276686, 0, 0.10792346, 165.18877, 13.885108, 3.2247906)
 use_collision = true
 mesh = SubResource("BoxMesh_ep5lw")
 material = SubResource("StandardMaterial3D_m8wxu")
-script = ExtResource("10_eq8du")
+script = ExtResource("10_75vob")
+tempo_fade = 1.0
 
 [node name="Plataforme_Inv3" type="CSGMesh3D" parent="." unique_id=1978974449]
 transform = Transform3D(0.17971301, 0, 4.160284, 0, 1, 0, -6.9276686, 0, 0.10792346, 151.34523, 13.885108, 3.2247906)
 use_collision = true
 mesh = SubResource("BoxMesh_ep5lw")
 material = SubResource("StandardMaterial3D_m8wxu")
-script = ExtResource("11_cxgpi")
+script = ExtResource("10_75vob")
+tempo_fade = 1.0
+comeca_visivel = true
 
 [node name="Plataforme_Inv4" type="CSGMesh3D" parent="." unique_id=2091636165]
 transform = Transform3D(0.17971301, 0, 4.160284, 0, 1, 0, -6.9276686, 0, 0.10792346, 137.40768, 13.885108, 3.2247906)
 use_collision = true
 mesh = SubResource("BoxMesh_ep5lw")
 material = SubResource("StandardMaterial3D_m8wxu")
-script = ExtResource("12_ynwup")
+script = ExtResource("10_75vob")
+tempo_fade = 1.0
 
 [node name="Plataforme_Inv5" type="CSGMesh3D" parent="." unique_id=1972595835]
 transform = Transform3D(0.17971301, 0, 4.160284, 0, 1, 0, -6.9276686, 0, 0.10792346, 124.916595, 13.885108, 3.2247906)
 use_collision = true
 mesh = SubResource("BoxMesh_ep5lw")
 material = SubResource("StandardMaterial3D_m8wxu")
-script = ExtResource("13_rjysx")
+script = ExtResource("10_75vob")
+tempo_fade = 1.0
+comeca_visivel = true
 
 [node name="Plataforme_Inv6" type="CSGMesh3D" parent="." unique_id=1662876644]
 transform = Transform3D(0.17971301, 0, 4.160284, 0, 1, 0, -6.9276686, 0, 0.10792346, 111.4197, 13.885108, 3.2247906)
 use_collision = true
 mesh = SubResource("BoxMesh_ep5lw")
 material = SubResource("StandardMaterial3D_m8wxu")
-script = ExtResource("14_75vob")
+script = ExtResource("10_75vob")
+tempo_fade = 1.0
 
 [node name="CSGMesh3D8" type="CSGMesh3D" parent="." unique_id=1687836996]
 transform = Transform3D(6.93, 0, 0, 0, 1, 0, 0, 0, 6.8, 110.86526, 12.355521, -13.168861)
@@ -597,35 +603,40 @@ transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 0.8, 96.278, 12.355521, -13.168
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
 material = SubResource("StandardMaterial3D_jrosl")
-script = ExtResource("15_cxgpi")
+script = ExtResource("11_iuule")
+tempo_fade = 1.0
 
 [node name="Plataforma_some2" type="CSGMesh3D" parent="." unique_id=223458114]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 0.8, 77.62857, 12.355521, -23.29013)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
 material = SubResource("StandardMaterial3D_jrosl")
-script = ExtResource("15_cxgpi")
+script = ExtResource("11_iuule")
+tempo_fade = 1.0
 
 [node name="Plataforma_some3" type="CSGMesh3D" parent="." unique_id=926609485]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 0.8, 60.210114, 12.355521, -13.208028)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
 material = SubResource("StandardMaterial3D_jrosl")
-script = ExtResource("15_cxgpi")
+script = ExtResource("11_iuule")
+tempo_fade = 1.0
 
 [node name="Plataforma_some4" type="CSGMesh3D" parent="." unique_id=1144035833]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 0.8, 45.73689, 12.355521, -23.395967)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
 material = SubResource("StandardMaterial3D_jrosl")
-script = ExtResource("15_cxgpi")
+script = ExtResource("11_iuule")
+tempo_fade = 1.0
 
 [node name="Plataforma_some5" type="CSGMesh3D" parent="." unique_id=800531698]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 0.8, 30.694588, 12.355521, -13.221604)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
 material = SubResource("StandardMaterial3D_jrosl")
-script = ExtResource("15_cxgpi")
+script = ExtResource("11_iuule")
+tempo_fade = 1.0
 
 [node name="Pause_menu" parent="." unique_id=1746631569 instance=ExtResource("16_cxgpi")]
 

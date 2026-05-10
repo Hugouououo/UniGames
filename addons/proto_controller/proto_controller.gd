@@ -67,6 +67,8 @@ var freeflying : bool = false
 @onready var collider: CollisionShape3D = $Collider
 
 func _ready() -> void:
+	# spawn point depende de onde tá o cilindro do jogador lá ele
+	spawn_point = global_position
 	check_input_mappings()
 	# Captura a rotação inicial da cena (Editor)
 	look_rotation.y = rotation.y
