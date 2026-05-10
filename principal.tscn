@@ -34,6 +34,8 @@ tonemap_mode = 2
 
 [sub_resource type="BoxMesh" id="BoxMesh_7cuts"]
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_75vob"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y3mbs"]
 albedo_color = Color(1, 1, 0, 1)
 metallic = 1.0
@@ -45,6 +47,10 @@ emission_operator = 1
 emission_on_uv2 = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cxgpi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7lji8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v7sa1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_emcp4"]
 
@@ -139,12 +145,13 @@ use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
 
 [node name="Final" type="CSGMesh3D" parent="." unique_id=1751081082]
-transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 6.8093505, -14.672302, 8.881335, -16.65587)
+transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 6.8093505, -14.127975, 8.782326, -16.65587)
 use_collision = true
-mesh = SubResource("BoxMesh_7cuts")
+mesh = SubResource("CylinderMesh_75vob")
 material = SubResource("StandardMaterial3D_y3mbs")
 
 [node name="Area3D" type="Area3D" parent="Final" unique_id=993436593]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41286945, 0)
 script = ExtResource("2_cxgpi")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Final/Area3D" unique_id=287463423]
@@ -153,14 +160,16 @@ shape = SubResource("BoxShape3D_cxgpi")
 debug_color = Color(0.9372437, 0.16844162, 0.47434574, 0.41960785)
 
 [node name="CSGMesh3D44" type="CSGMesh3D" parent="." unique_id=1410568543]
-transform = Transform3D(0.3, 0, 0, 0, 1, 0, 0, 0, 0.3, 15.313129, 11.936365, -13.342635)
+transform = Transform3D(0.3, 0, 0, 0, 0.37950394, 0, 0, 0, 0.3, 15.313129, 12.2261715, -13.342635)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
+material = SubResource("StandardMaterial3D_7lji8")
 
 [node name="CSGMesh3D45" type="CSGMesh3D" parent="." unique_id=255117824]
-transform = Transform3D(0.3, 0, 0, 0, 1, 0, 0, 0, 0.3, 2.0408664, 11.328762, -16.12989)
+transform = Transform3D(0.3, 0, 0, 0, 0.4120018, 0, 0, 0, 0.3, 2.0408664, 11.573818, -16.12989)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
+material = SubResource("StandardMaterial3D_v7sa1")
 
 [node name="CSGMesh3D2" type="CSGMesh3D" parent="." unique_id=1928766780]
 transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 3.8284125, 11.952312, 0, -1.5086336)
@@ -376,7 +385,7 @@ mesh = SubResource("BoxMesh_ep5lw")
 material = SubResource("StandardMaterial3D_1g4wj")
 
 [node name="CSGMesh3D38" type="CSGMesh3D" parent="." unique_id=2113132847]
-transform = Transform3D(1.0318615, 0, -1.971077, 0, 1, 0, 1.8344766, 0, 1.1086967, 213.52272, 10.81065, 24.275677)
+transform = Transform3D(-0.29714578, 0, -2.238843, 0, 1, 0, 2.0836859, 0, -0.3192724, 210.76692, 10.744779, 23.882685)
 use_collision = true
 mesh = SubResource("BoxMesh_ep5lw")
 material = SubResource("StandardMaterial3D_1g4wj")
