@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="UniGames"
-run/main_scene="uid://deag23mkx0s6o"
+run/main_scene="uid://d27p7ek6x1g32"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
