@@ -32,7 +32,7 @@ background_mode = 2
 sky = SubResource("Sky_m7tbw")
 tonemap_mode = 2
 
-[sub_resource type="BoxMesh" id="BoxMesh_7cuts"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_ek21e"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_75vob"]
 
@@ -47,6 +47,8 @@ emission_operator = 1
 emission_on_uv2 = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cxgpi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7cuts"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7lji8"]
 
@@ -116,7 +118,7 @@ albedo_color = Color(0, 0.9411765, 0.28627452, 1)
 albedo_color = Color(1, 0.1764706, 1, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_75vob"]
-radius = 0.62134767
+radius = 4.6472273
 
 [node name="Principal" type="Node3D" unique_id=1734729434]
 
@@ -128,7 +130,7 @@ shadow_enabled = true
 environment = SubResource("Environment_rrtif")
 
 [node name="ProtoController" parent="." unique_id=289982215 groups=["Player"] instance=ExtResource("1_tr6oq")]
-transform = Transform3D(-0.0078538805, 0, -0.9999692, 0, 1, 0, 0.9999692, 0, -0.0078538805, -1.4116441, 0.5132837, -0.66589993)
+transform = Transform3D(-0.0078538805, 0, -0.9999692, 0, 1, 0, 0.9999692, 0, -0.0078538805, -7.957292, 0.5132837, 19.356026)
 floor_max_angle = 1.2217305
 spawn_point = Vector3(-2.256, 2, -0.342)
 input_left = "mover_esquerda"
@@ -140,9 +142,9 @@ input_sprint = "correr"
 input_freefly = "voo_livre"
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1278476597]
-transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 6.8093505, -0.50389576, -0.33556557, -0.5874734)
+transform = Transform3D(6.943872, 0, 0, 0, 0.6840783, 0, 0, 0, 6.8169637, -7.049544, -0.33556557, 19.434452)
 use_collision = true
-mesh = SubResource("BoxMesh_7cuts")
+mesh = SubResource("CylinderMesh_ek21e")
 
 [node name="Final" type="CSGMesh3D" parent="." unique_id=1751081082]
 transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 6.8093505, -14.127975, 8.782326, -16.65587)
@@ -172,7 +174,7 @@ mesh = SubResource("BoxMesh_7cuts")
 material = SubResource("StandardMaterial3D_v7sa1")
 
 [node name="CSGMesh3D2" type="CSGMesh3D" parent="." unique_id=1928766780]
-transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 3.8284125, 11.952312, 0, -1.5086336)
+transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 3.8284125, 5.4066644, 0, 18.51329)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
 metadata/_edit_group_ = true
@@ -183,17 +185,17 @@ use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
 
 [node name="CSGMesh3D4" type="CSGMesh3D" parent="." unique_id=515975270]
-transform = Transform3D(6.93, 0, 0, 0, 1, 0, 0, 0, 6.8, 30.310959, 0.39011312, -8.362513)
+transform = Transform3D(6.93, 0, 0, 0, 1, 0, 0, 0, 6.8, 27.15244, 0.39011312, 13.26185)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
 
 [node name="CSGMesh3D5" type="CSGMesh3D" parent="." unique_id=918539538]
-transform = Transform3D(2.2057004, 0, 0.614689, 0, 1, 0, -2.3484218, 0, 0.5773324, 40.036808, 0.77042663, -3.9102926)
+transform = Transform3D(2.2057004, 0, 0.614689, 0, 1, 0, -2.3484218, 0, 0.5773324, 40.036808, 0.77042663, 16.111633)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
 
 [node name="CSGMesh3D7" type="CSGMesh3D" parent="." unique_id=549697935]
-transform = Transform3D(3.2218318, 0, 0, 0, 1, 0, 0, 0, 0.8433002, 48.014442, 1.5472491, -8.744656)
+transform = Transform3D(3.2218318, 0, 0, 0, 1, 0, 0, 0, 0.8433002, 48.014442, 1.5472491, 11.277269)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
 
@@ -208,12 +210,12 @@ use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
 
 [node name="CSGMesh3D30" type="CSGMesh3D" parent="." unique_id=157174266]
-transform = Transform3D(1.0853188, 0, 0, 0, 1, 0, 0, 0, 0.8433002, 54.399387, 1.5472491, -4.5275536)
+transform = Transform3D(1.0853188, 0, 0, 0, 1, 0, 0, 0, 0.8433002, 55.70106, 1.5472491, 15.494371)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
 
 [node name="CSGMesh3D10" type="CSGMesh3D" parent="." unique_id=242357072]
-transform = Transform3D(-6.488837e-09, 0, 7.4195437, 0, 1, 0, -0.14844729, 0, -3.2431853e-07, 64.59635, 1.5472491, -1.8524003)
+transform = Transform3D(-0.11012172, 0, 4.9755077, 0, 1, 0, -0.099548005, 0, -5.5039935, 63.317535, 1.5472491, 8.722155)
 use_collision = true
 mesh = SubResource("BoxMesh_7cuts")
 
@@ -230,7 +232,7 @@ mouse_filter = 2
 script = ExtResource("3_rrtif")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Lava" unique_id=322323327]
-transform = Transform3D(104.969086, 0, 0, 0, 10, 0, 0, 0, 100, 99.766525, -12.57269, 2.6046162)
+transform = Transform3D(104.969086, 0, 0, 0, 10, 0, 0, 0, 100, 99.727, -12.58751, 2.6411839)
 material_override = ExtResource("4_7cuts")
 cast_shadow = 0
 size = Vector3(2.9621582, 1, 1)
@@ -531,6 +533,7 @@ script = ExtResource("7_jpj0s")
 [node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="Plataforme_mov3" unique_id=1050257392]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plataforme_mov3" unique_id=1219255584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.064931, 0)
 shape = SubResource("BoxShape3D_jpj0s")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="Plataforme_mov3" unique_id=1657442059]
@@ -627,17 +630,32 @@ script = ExtResource("15_cxgpi")
 [node name="Pause_menu" parent="." unique_id=1746631569 instance=ExtResource("16_cxgpi")]
 
 [node name="Checkpoint" type="Area3D" parent="." unique_id=1645304736]
-transform = Transform3D(0.0542761, -0.16830905, 0.9842389, 0, 0.98569185, 0.16855751, -0.998526, -0.009148644, 0.053499512, 105.02089, 3.8756402, 20.386288)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 105.02089, 3.8756402, 20.386288)
 script = ExtResource("7_ynwup")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint" unique_id=68388227]
 shape = SubResource("SphereShape3D_75vob")
 
 [node name="Checkpoint2" type="Area3D" parent="." unique_id=950438678]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227.63571, 16.500898, 13.185431)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227.63571, 16.500898, 13.577288)
 script = ExtResource("7_ynwup")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint2" unique_id=2127094112]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+shape = SubResource("SphereShape3D_75vob")
+
+[node name="Checkpoint3" type="Area3D" parent="." unique_id=1269785545]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 111.85615, 14.3781805, -13.067563)
+script = ExtResource("7_ynwup")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint3" unique_id=154050779]
+shape = SubResource("SphereShape3D_75vob")
+
+[node name="Checkpoint4" type="Area3D" parent="." unique_id=243603584]
+transform = Transform3D(0.010539317, 0.06025082, -0.99812764, 0, 0.9981831, 0.060254164, 0.99994445, -0.0006350377, 0.010520168, 74.65444, 2.267338, -5.4155574)
+script = ExtResource("7_ynwup")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint4" unique_id=364671806]
 shape = SubResource("SphereShape3D_75vob")
 
 [node name="Timer" parent="." unique_id=797562577 instance=ExtResource("17_ynwup")]

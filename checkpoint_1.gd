@@ -7,14 +7,12 @@ func _ready():
 	body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body):
-	# Só executa se ainda não foi ativado E se for o jogador
 	if not ativado and body.has_method("check_fall"):
-		ativado = true # Marca como ativado para nunca mais entrar aqui
-		
+		ativado = true 
 		Global.checkpoint_pos = global_position
-		print("Checkpoint ativado em: ", global_position)
-		
-		# Chama a função para mostrar o texto na interface
+		# Pega a rotação Y do checkpoint (em radianos)
+		Global.checkpoint_rot = global_rotation.y 
+		print("Checkpoint ativado! Pos: ", global_position, " Rot: ", global_rotation.y)
 		exibir_mensagem_checkpoint()
 
 func exibir_mensagem_checkpoint():

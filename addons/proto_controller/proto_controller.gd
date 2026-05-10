@@ -167,19 +167,23 @@ func rotate_look(rot_input : Vector2):
 	rotate_y(look_rotation.y)
 	head.transform.basis = Basis()
 	head.rotate_x(look_rotation.x)
-
+	
 func check_fall():
 	if global_position.y < fall_limit:
 		if Global.checkpoint_pos != Vector3.ZERO:
-			# Teleporta para o checkpoint salvo
+			# Teleporta para a posição salva
 			global_position = Global.checkpoint_pos 
+			# --- A MÁGICA ACONTECE AQUI ---
+			# Atualiza a variável de controle da câmera do script
+			look_rotation.y = Global.checkpoint_rot
+			# Aplica a rotação no corpo do jogador
+			rotation.y = Global.checkpoint_rot
 		else:
-			# Se não tiver checkpoint, volta para o início
 			global_position = spawn_point 
-		
-		velocity = Vector3.ZERO
-		look_rotation = initial_look_rotation
-		rotate_look(Vector2.ZERO)
+			look_rotation = initial_look_rotation
+			velocity = Vector3.ZERO
+			# Força a atualização da câmera/olhar
+			rotate_look(Vector2.ZERO)
 
 func _on_dash_timer_timeout():
 	is_dashing = false
