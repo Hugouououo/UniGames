@@ -9,6 +9,12 @@ extends CharacterBody3D
 @export var can_sprint : bool = true
 @export var can_freefly : bool = true
 
+@export_group("Perspective")
+@export var input_perspective : String = "toggle_camera" # Configure "C" no Input Map
+var is_third_person : bool = false
+@onready var spring_arm: SpringArm3D = $Head/SpringArm3D
+@onready var camera: Camera3D = $Head/SpringArm3D/Camera3D
+
 #########################################################################
 #   MODIFICAÇÕES: DASH SUAVE
 #########################################################################
@@ -89,7 +95,21 @@ func _ready() -> void:
 	cooldown_timer.wait_time = dash_cooldown
 	cooldown_timer.timeout.connect(_on_cooldown_timer_timeout)
 	add_child(cooldown_timer)
+	
+	#sobre a camera
+	update_camera_perspective()
 
+func update_camera_perspective():
+	if is_third_person:
+		# Terceira Pessoa
+		spring_arm.spring_length = 4 # Distância desejada
+		# Opcional: deslocar a câmera um pouco para o lado (estilo ombro)
+		spring_arm.position.x = 0.0
+	else:
+		# Primeira Pessoa
+		spring_arm.spring_length = 0
+		spring_arm.position.x = 0
+		
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		capture_mouse()
@@ -104,6 +124,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			enable_freefly()
 		else:
 			disable_freefly()
+			
+	if Input.is_action_just_pressed(input_perspective):
+		is_third_person = !is_third_person
+		update_camera_perspective()
 
 func _physics_process(delta: float) -> void:
 	check_fall()
