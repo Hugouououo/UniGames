@@ -1,16 +1,18 @@
 extends CSGMesh3D
 
 @export var tempo_para_sumir := 2.0
-@export var tempo_fade := 0.5 # Tempo da animação de transparência
+@export var tempo_fade := 0.5 
+@export var tempo_para_voltar := 3.0 # Tempo que ela fica invisível antes de retornar
 
 var ativado := false
 var material_proprio: StandardMaterial3D
+var cor_original: Color
 
 func _ready():
-	# Duplicamos o material para que o fade de uma não afete as outras
 	if material:
 		material_proprio = material.duplicate()
 		material = material_proprio
+		cor_original = material_proprio.albedo_color
 
 func iniciar_sumir():
 	if ativado:
@@ -18,20 +20,32 @@ func iniciar_sumir():
 	
 	ativado = true
 	
-	# Calculamos quanto tempo esperar antes de começar o fade
+	# --- FASE 1: SUMIR ---
 	var tempo_de_espera = max(0.0, tempo_para_sumir - tempo_fade)
 	await get_tree().create_timer(tempo_de_espera).timeout
 	
-	# Inicia o efeito de Fade Out
 	if material_proprio:
-		var tween = create_tween()
-		var cor_alvo = material_proprio.albedo_color
-		cor_alvo.a = 0.0 # Define o alpha (transparência) como zero
-		
-		# Anima a cor do material até ficar invisível
-		tween.tween_property(material_proprio, "albedo_color", cor_alvo, tempo_fade)
-		await tween.finished
+		var tween_out = create_tween()
+		var cor_invisivel = cor_original
+		cor_invisivel.a = 0.0
+		tween_out.tween_property(material_proprio, "albedo_color", cor_invisivel, tempo_fade)
+		await tween_out.finished
 	
-	# Desativa visual e colisão após o fade
 	visible = false
 	use_collision = false
+
+	# --- FASE 2: ESPERAR E VOLTAR ---
+	await get_tree().create_timer(tempo_para_voltar).timeout
+	
+	# Resetar propriedades básicas
+	visible = true
+	use_collision = true
+	
+	# Efeito de Fade In (opcional, para não aparecer do nada)
+	if material_proprio:
+		var tween_in = create_tween()
+		tween_in.tween_property(material_proprio, "albedo_color", cor_original, tempo_fade)
+		await tween_in.finished
+	
+	# Permitir que o processo aconteça novamente
+	ativado = false

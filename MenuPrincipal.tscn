@@ -38,7 +38,13 @@ alignment = 1
 
 [node name="Titulo" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1469669909]
 layout_mode = 2
-text = "UNIGAMES"
+text = "PARKOUR RADICAL !!!"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Titulo2" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1665373771]
+layout_mode = 2
+text = "UniGames 2026"
 horizontal_alignment = 1
 
 [node name="ButtonIniciar" type="Button" parent="CenterContainer/VBoxContainer" unique_id=284579845]

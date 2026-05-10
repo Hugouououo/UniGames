@@ -27,7 +27,7 @@ background_mode = 2
 sky = SubResource("Sky_m7tbw")
 tonemap_mode = 2
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_ek21e"]
+[sub_resource type="BoxMesh" id="BoxMesh_iuule"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_75vob"]
 
@@ -139,9 +139,9 @@ input_sprint = "correr"
 input_freefly = "voo_livre"
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1278476597]
-transform = Transform3D(6.943872, 0, 0, 0, 0.6840783, 0, 0, 0, 6.8169637, -7.049544, -0.33556557, 19.434452)
+transform = Transform3D(6.943872, 0, 0, 0, 0.6840783, 0, 0, 0, 6.8169637, -7.049544, 0.077409, 19.434452)
 use_collision = true
-mesh = SubResource("CylinderMesh_ek21e")
+mesh = SubResource("BoxMesh_iuule")
 
 [node name="Final" type="CSGMesh3D" parent="." unique_id=1751081082]
 transform = Transform3D(6.936117, 0, 0, 0, 1, 0, 0, 0, 6.8093505, -14.127975, 8.782326, -16.65587)
@@ -621,6 +621,7 @@ mesh = SubResource("BoxMesh_7cuts")
 material = SubResource("StandardMaterial3D_jrosl")
 script = ExtResource("11_iuule")
 tempo_fade = 1.0
+tempo_para_voltar = 2.0
 
 [node name="Plataforma_some4" type="CSGMesh3D" parent="." unique_id=1144035833]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 0.8, 45.73689, 12.355521, -23.395967)

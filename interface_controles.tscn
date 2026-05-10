@@ -28,8 +28,8 @@ uppercase = true
 [node name="LabelCheckpoint" type="Label" parent="." unique_id=497989572]
 visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 232.0
+offset_bottom = 68.0
 text = "Checkpoint alcançado!"
 horizontal_alignment = 1
-vertical_alignment = 2
+vertical_alignment = 1
