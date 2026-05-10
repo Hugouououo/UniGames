@@ -1,0 +1,156 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6u6y8eyri7jf"]
+
+[ext_resource type="Script" uid="uid://b3h37neodvprt" path="res://pause_menu.gd" id="1_p81d2"]
+[ext_resource type="Texture2D" uid="uid://djuaoe4po35pk" path="res://Imagens/WASD.png" id="2_2nc7s"]
+[ext_resource type="Texture2D" uid="uid://bwykl4c0wi833" path="res://Imagens/espaco.png" id="3_espaco"]
+[ext_resource type="Texture2D" uid="uid://day2evniji8l" path="res://Imagens/Shift.png" id="4_shift"]
+[ext_resource type="Texture2D" uid="uid://degoidb1aj06q" path="res://Imagens/Mouse.png" id="5_mouse"]
+
+[node name="Pause_menu" type="CanvasLayer"]
+process_mode = 3
+
+[node name="PauseMenu" type="Control" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p81d2")
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="Panel" type="Panel" parent="PauseMenu"]
+custom_minimum_size = Vector2(800, 350)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -175.0
+offset_right = 400.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 35.0
+offset_right = -40.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="VBoxBotoes" type="VBoxContainer" parent="PauseMenu/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 28
+alignment = 1
+
+[node name="ButtonContinuar" type="Button" parent="PauseMenu/Panel/HBoxContainer/VBoxBotoes"]
+custom_minimum_size = Vector2(220, 60)
+layout_mode = 2
+text = "▶  CONTINUAR"
+
+[node name="ButtonDesistir" type="Button" parent="PauseMenu/Panel/HBoxContainer/VBoxBotoes"]
+custom_minimum_size = Vector2(220, 60)
+layout_mode = 2
+text = "↩  DESISTIR"
+
+[node name="VSeparator" type="VSeparator" parent="PauseMenu/Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxControles" type="VBoxContainer" parent="PauseMenu/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="LabelControles" type="Label" parent="PauseMenu/Panel/HBoxContainer/VBoxControles"]
+layout_mode = 2
+text = "CONTROLES"
+horizontal_alignment = 1
+
+[node name="LinhaWASD" type="HBoxContainer" parent="PauseMenu/Panel/HBoxContainer/VBoxControles"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TexturaWASD" type="TextureRect" parent="PauseMenu/Panel/HBoxContainer/VBoxControles/LinhaWASD"]
+custom_minimum_size = Vector2(150, 90)
+layout_mode = 2
+texture = ExtResource("2_2nc7s")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="LabelWASD" type="Label" parent="PauseMenu/Panel/HBoxContainer/VBoxControles/LinhaWASD"]
+layout_mode = 2
+text = "WASD - Mover"
+vertical_alignment = 1
+
+[node name="LinhaEspaco" type="HBoxContainer" parent="PauseMenu/Panel/HBoxContainer/VBoxControles"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TexturaEspaco" type="TextureRect" parent="PauseMenu/Panel/HBoxContainer/VBoxControles/LinhaEspaco"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+texture = ExtResource("3_espaco")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="LabelEspaco" type="Label" parent="PauseMenu/Panel/HBoxContainer/VBoxControles/LinhaEspaco"]
+layout_mode = 2
+text = "Espaço - Pular"
+vertical_alignment = 1
+
+[node name="LinhaShift" type="HBoxContainer" parent="PauseMenu/Panel/HBoxContainer/VBoxControles"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TexturaShift" type="TextureRect" parent="PauseMenu/Panel/HBoxContainer/VBoxControles/LinhaShift"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+texture = ExtResource("4_shift")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="LabelShift" type="Label" parent="PauseMenu/Panel/HBoxContainer/VBoxControles/LinhaShift"]
+layout_mode = 2
+text = "Shift - Dash"
+vertical_alignment = 1
+
+[node name="LinhaMouse" type="HBoxContainer" parent="PauseMenu/Panel/HBoxContainer/VBoxControles"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TexturaMouse" type="TextureRect" parent="PauseMenu/Panel/HBoxContainer/VBoxControles/LinhaMouse"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("5_mouse")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="LabelMouse" type="Label" parent="PauseMenu/Panel/HBoxContainer/VBoxControles/LinhaMouse"]
+layout_mode = 2
+text = "Mouse - Controlar câmera"
+vertical_alignment = 1

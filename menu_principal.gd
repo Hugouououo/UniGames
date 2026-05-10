@@ -2,7 +2,7 @@ extends Control
 
 @onready var btn_iniciar: Button = $CenterContainer/VBoxContainer/ButtonIniciar
 @onready var btn_controles: Button = $CenterContainer/VBoxContainer/ButtonControles
-@onready var btn_creditos: Button = $CenterContainer/VBoxContainer/ButtonCreditos
+@onready var btn_creditos = $CenterContainer/VBoxContainer/ButtonCreditos
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -17,4 +17,4 @@ func _controles():
 	get_tree().change_scene_to_file("res://controles_menu.tscn")
 
 func _creditos():
-	print("Tela de créditos ainda não configurada")
+	get_tree().change_scene_to_file("res://Creditos.tscn")

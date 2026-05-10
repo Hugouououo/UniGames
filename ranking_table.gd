@@ -59,5 +59,6 @@ func adicionar_label(texto: String, cabecalho := false) -> void:
 	label.add_theme_font_size_override("font_size", 22 if cabecalho else 18)
 	grid.add_child(label)
 
-func _on_button_fechar_pressed() -> void:
-	visible = false
+func _on_button_fechar_pressed():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://MenuPrincipal.tscn")

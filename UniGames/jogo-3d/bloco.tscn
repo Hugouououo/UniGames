@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://d25w4dxr5k66r"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_l6d1b"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="ImageTexture" id="ImageTexture_247xi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o26kk"]
+metallic = 1.0
+metallic_specular = 1.0
+metallic_texture = SubResource("ImageTexture_247xi")
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_25pwe"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nnylt"]
+size = Vector3(0.5, 2, 0.5)
+
+[sub_resource type="Environment" id="Environment_l6d1b"]
+
+[node name="bloco" type="Node3D" unique_id=1769379559]
+
+[node name="chão" type="MeshInstance3D" parent="." unique_id=1969536624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5408839, -0.3260883, 0.7372291)
+mesh = SubResource("BoxMesh_l6d1b")
+
+[node name="Rua" type="MeshInstance3D" parent="." unique_id=1547845268]
+transform = Transform3D(0.9992921, -0.037620503, -8.0783124e-08, -0.037620503, -0.9992921, 1.7801065e-07, -8.742279e-08, -1.7484554e-07, -1, 0.7644497, 0.8176862, -0.45114708)
+top_level = true
+material_override = SubResource("StandardMaterial3D_o26kk")
+material_overlay = SubResource("ORMMaterial3D_25pwe")
+mesh = SubResource("BoxMesh_nnylt")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=72874316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.65660024, 0.44648302, 5.0212984)
+current = true
+fov = 77.45148
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1814534112]
+environment = SubResource("Environment_l6d1b")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1084782204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.613279, 0.8415536, 1.2221649)
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_reverse_cull_face = true
+shadow_blur = 0.0
+omni_range = 2.059
+omni_shadow_mode = 0
+
+[node name="Rua2" type="MeshInstance3D" parent="." unique_id=651165762]
+transform = Transform3D(0.645813, -0.02431316, -0.7631086, -0.037620507, -0.9992922, 1.78026e-07, -0.76256835, 0.02870842, -0.6462706, -0.50329995, 0.8176862, 0.5533426)
+top_level = true
+material_override = SubResource("StandardMaterial3D_o26kk")
+material_overlay = SubResource("ORMMaterial3D_25pwe")
+mesh = SubResource("BoxMesh_nnylt")
+
+[node name="Rua3" type="MeshInstance3D" parent="." unique_id=221643839]
+transform = Transform3D(0.6832231, -0.025721276, 0.7297567, -0.037620503, -0.9992921, 1.776908e-07, 0.72924006, -0.027453937, -0.6837071, 1.7088186, 0.8176862, -0.2629068)
+top_level = true
+material_override = SubResource("StandardMaterial3D_o26kk")
+material_overlay = SubResource("ORMMaterial3D_25pwe")
+mesh = SubResource("BoxMesh_nnylt")
+
+[node name="Rua4" type="MeshInstance3D" parent="." unique_id=1612459454]
+transform = Transform3D(0.9074856, -0.034164328, -0.4186915, -0.037620503, -0.9992921, 1.7801065e-07, -0.4183951, 0.015751224, -0.9081285, -0.0538581, 0.8176862, -0.27291775)
+top_level = true
+material_override = SubResource("StandardMaterial3D_o26kk")
+material_overlay = SubResource("ORMMaterial3D_25pwe")
+mesh = SubResource("BoxMesh_nnylt")
+
+[node name="Rua5" type="MeshInstance3D" parent="." unique_id=1514766973]
+transform = Transform3D(-0.9989423, 0.03760734, 0.026456123, -0.037620503, -0.9992921, 1.7801065e-07, 0.026437402, -0.0009951149, 0.99965, 2.217965, 0.8176862, 0.6130451)
+top_level = true
+material_override = SubResource("StandardMaterial3D_o26kk")
+material_overlay = SubResource("ORMMaterial3D_25pwe")
+mesh = SubResource("BoxMesh_nnylt")

@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://d27p7ek6x1g32"]
+
+[ext_resource type="Script" uid="uid://bgcd44hwhs8a2" path="res://menu_principal.gd" id="1_0oe1n"]
+[ext_resource type="Texture2D" uid="uid://d3io05pv75xtp" path="res://Imagens/Fundo.png" id="2_ba235"]
+
+[node name="MenuPrincipal" type="Control" unique_id=1403599447]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0oe1n")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1200656814]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 646.0
+texture = ExtResource("2_ba235")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2032932894]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = -2.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1661576829]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Titulo" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1469669909]
+layout_mode = 2
+text = "UNIGAMES"
+horizontal_alignment = 1
+
+[node name="ButtonIniciar" type="Button" parent="CenterContainer/VBoxContainer" unique_id=284579845]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+text = "INICIAR"
+
+[node name="ButtonControles" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1600683247]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+text = "CONTROLES"
+
+[node name="ButtonCreditos" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1088765982]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+text = "CRÉDITOS"

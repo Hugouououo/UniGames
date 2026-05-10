@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://deag23mkx0s6o"]
+
+[ext_resource type="Script" uid="uid://quywqtb8f35c" path="res://button_comecar.gd" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://d3io05pv75xtp" path="res://Imagens/Fundo.png" id="1_ouk20"]
+
+[node name="Menu" type="Control" unique_id=183981303]
+layout_mode = 3
+anchor_right = 0.62200004
+anchor_bottom = 0.41300002
+offset_right = -676.54407
+offset_bottom = -227.62402
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=429419282]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 649.0
+texture = ExtResource("1_ouk20")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=219028905]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 0
+offset_left = 400.0
+offset_top = 200.0
+offset_right = 760.0
+offset_bottom = 352.0
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="LabelTitulo" type="Label" parent="VBoxContainer" unique_id=903782371]
+layout_mode = 2
+text = "Jogo de Parkour incrivelmente FODA"
+
+[node name="LineNome" type="LineEdit" parent="VBoxContainer" unique_id=2057955113]
+layout_mode = 2
+placeholder_text = "Digite seu nome:"
+
+[node name="LineRA" type="LineEdit" parent="VBoxContainer" unique_id=770813102]
+layout_mode = 2
+placeholder_text = "Digite seu RA:"
+
+[node name="LabelErro" type="Label" parent="VBoxContainer" unique_id=1240838569]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8627451, 0, 0, 1)
+text = "Preencha nome e RA!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonComecar" type="Button" parent="VBoxContainer" unique_id=1812248784]
+layout_mode = 2
+text = "Começar"
+script = ExtResource("1_lti8b")
+
+[connection signal="pressed" from="VBoxContainer/ButtonComecar" to="VBoxContainer/ButtonComecar" method="_on_pressed"]
