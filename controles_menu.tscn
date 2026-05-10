@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene format=3 uid="uid://cybpsavmo3jsq"]
 
-[ext_resource type="Script" path="res://controles_menu.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://dro1bib4hig5s" path="res://controles_menu.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://d3io05pv75xtp" path="res://Imagens/Fundo.png" id="2_kad7a"]
 [ext_resource type="Texture2D" uid="uid://djuaoe4po35pk" path="res://Imagens/WASD.png" id="2_wasd"]
-[ext_resource type="Texture2D" uid="uid://bwykl4c0wi833" path="res://Imagens/espaco.png" id="3_espaco"]
+[ext_resource type="Texture2D" uid="uid://i8ghyj5lmbmm" path="res://Imagens/espaco.png" id="3_espaco"]
 [ext_resource type="Texture2D" uid="uid://day2evniji8l" path="res://Imagens/Shift.png" id="4_shift"]
 [ext_resource type="Texture2D" uid="uid://degoidb1aj06q" path="res://Imagens/Mouse.png" id="5_mouse"]
 
-[node name="ControlesMenu" type="Control"]
+[node name="ControlesMenu" type="Control" unique_id=1671049267]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,16 +16,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.035, 0.035, 0.05, 1)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1346150291]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_kad7a")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1678170441]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,11 +30,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="CenterContainer"]
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=2064479834]
 custom_minimum_size = Vector2(760, 520)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel" unique_id=118682513]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -50,84 +48,84 @@ grow_vertical = 2
 theme_override_constants/separation = 14
 alignment = 1
 
-[node name="LabelTitulo" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="LabelTitulo" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=906607131]
 layout_mode = 2
 text = "CONTROLES"
 horizontal_alignment = 1
 
-[node name="LinhaWASD" type="HBoxContainer" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="LinhaWASD" type="HBoxContainer" parent="CenterContainer/Panel/VBoxContainer" unique_id=92534702]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TexturaWASD" type="TextureRect" parent="CenterContainer/Panel/VBoxContainer/LinhaWASD"]
+[node name="TexturaWASD" type="TextureRect" parent="CenterContainer/Panel/VBoxContainer/LinhaWASD" unique_id=1450604724]
 custom_minimum_size = Vector2(160, 90)
 layout_mode = 2
 texture = ExtResource("2_wasd")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="LabelWASD" type="Label" parent="CenterContainer/Panel/VBoxContainer/LinhaWASD"]
+[node name="LabelWASD" type="Label" parent="CenterContainer/Panel/VBoxContainer/LinhaWASD" unique_id=1725096972]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 text = "WASD - Mover"
 vertical_alignment = 1
 
-[node name="LinhaEspaco" type="HBoxContainer" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="LinhaEspaco" type="HBoxContainer" parent="CenterContainer/Panel/VBoxContainer" unique_id=2015637404]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TexturaEspaco" type="TextureRect" parent="CenterContainer/Panel/VBoxContainer/LinhaEspaco"]
+[node name="TexturaEspaco" type="TextureRect" parent="CenterContainer/Panel/VBoxContainer/LinhaEspaco" unique_id=425533464]
 custom_minimum_size = Vector2(160, 50)
 layout_mode = 2
 texture = ExtResource("3_espaco")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="LabelEspaco" type="Label" parent="CenterContainer/Panel/VBoxContainer/LinhaEspaco"]
+[node name="LabelEspaco" type="Label" parent="CenterContainer/Panel/VBoxContainer/LinhaEspaco" unique_id=377082252]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 text = "Espaço - Pular"
 vertical_alignment = 1
 
-[node name="LinhaShift" type="HBoxContainer" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="LinhaShift" type="HBoxContainer" parent="CenterContainer/Panel/VBoxContainer" unique_id=1479680137]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TexturaShift" type="TextureRect" parent="CenterContainer/Panel/VBoxContainer/LinhaShift"]
+[node name="TexturaShift" type="TextureRect" parent="CenterContainer/Panel/VBoxContainer/LinhaShift" unique_id=298194494]
 custom_minimum_size = Vector2(160, 50)
 layout_mode = 2
 texture = ExtResource("4_shift")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="LabelShift" type="Label" parent="CenterContainer/Panel/VBoxContainer/LinhaShift"]
+[node name="LabelShift" type="Label" parent="CenterContainer/Panel/VBoxContainer/LinhaShift" unique_id=1171938009]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 text = "Shift - Dash"
 vertical_alignment = 1
 
-[node name="LinhaMouse" type="HBoxContainer" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="LinhaMouse" type="HBoxContainer" parent="CenterContainer/Panel/VBoxContainer" unique_id=780780803]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TexturaMouse" type="TextureRect" parent="CenterContainer/Panel/VBoxContainer/LinhaMouse"]
+[node name="TexturaMouse" type="TextureRect" parent="CenterContainer/Panel/VBoxContainer/LinhaMouse" unique_id=325378643]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
 texture = ExtResource("5_mouse")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="LabelMouse" type="Label" parent="CenterContainer/Panel/VBoxContainer/LinhaMouse"]
+[node name="LabelMouse" type="Label" parent="CenterContainer/Panel/VBoxContainer/LinhaMouse" unique_id=1554469395]
 custom_minimum_size = Vector2(340, 0)
 layout_mode = 2
 text = "Mouse - Controlar câmera"
 vertical_alignment = 1
 
-[node name="ButtonVoltar" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="ButtonVoltar" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=214729948]
 custom_minimum_size = Vector2(260, 55)
 layout_mode = 2
 size_flags_horizontal = 4
