@@ -14,8 +14,8 @@ script = ExtResource("1_0oe1n")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1200656814]
 layout_mode = 0
-offset_right = 1153.0
-offset_bottom = 646.0
+offset_right = 1902.0
+offset_bottom = 1081.0
 texture = ExtResource("2_ba235")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=2032932894]
@@ -38,12 +38,18 @@ alignment = 1
 
 [node name="Titulo" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1469669909]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.6666667)
+theme_override_font_sizes/font_size = 64
 text = "PARKOUR RADICAL !!!"
 horizontal_alignment = 1
 uppercase = true
 
 [node name="Titulo2" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1665373771]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.6666667)
+theme_override_font_sizes/font_size = 64
 text = "UniGames 2026"
 horizontal_alignment = 1
 

@@ -8,38 +8,52 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x6jei")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1948352295]
 layout_mode = 0
-offset_right = 1150.0
-offset_bottom = 645.0
+offset_right = 1894.0
+offset_bottom = 1076.0
 texture = ExtResource("2_ed3ks")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1132054442]
-layout_mode = 0
-offset_left = 400.0
-offset_top = 150.0
-offset_right = 788.0
-offset_bottom = 518.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = -184.0
+offset_right = 194.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=2039193146]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1469976837]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.8)
 theme_override_font_sizes/font_size = 32
-text = "              Créditos
-             Feito por:
-- João Vitor Lima Carreira
-- Hugo Moreira Laprano
-- Gabriel Scaranello
+text = "            -- Créditos --
+             
+               Feito por:
 
-   Obrigado por jogar :)"
+  João Vitor Lima Carreira
+   Hugo Moreira Laprano
+       Gabriel Scaranello
+
+     Obrigado por jogar :)
+"
 
 [node name="ButtonVoltar" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1615676411]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "VOLTAR
 "

@@ -12,7 +12,7 @@ func _on_body_entered(body):
 		Global.checkpoint_pos = global_position
 		# Pega a rotação Y do checkpoint (em radianos)
 		Global.checkpoint_rot = global_rotation.y 
-		print("Checkpoint ativado! Pos: ", global_position, " Rot: ", global_rotation.y)
+		print("Checkpoint alcançado! Pos: ", global_position, " Rot: ", global_rotation.y)
 		exibir_mensagem_checkpoint()
 
 func exibir_mensagem_checkpoint():
