@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bs72ogkvdd7d6"]
 
 [ext_resource type="Script" uid="uid://3wcpq0abw6vl" path="res://addons/proto_controller/proto_controller.gd" id="1_ucva2"]
+[ext_resource type="AudioStream" uid="uid://gnjcoktsnial" path="res://sounds/dash1.mp3" id="2_wr06p"]
+[ext_resource type="AudioStream" uid="uid://c6tpwrb4ideh3" path="res://sounds/musicadefundo.mp3" id="3_5hfox"]
+[ext_resource type="AudioStream" uid="uid://bnh28a4axmjea" path="res://sounds/WoWCheckpopoint.mp3" id="4_6dqce"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
 albedo_color = Color(0, 0, 0, 1)
@@ -35,3 +38,17 @@ margin = 0.0
 
 [node name="Camera3D" type="Camera3D" parent="Head/SpringArm3D" unique_id=1603507858]
 fov = 90.0
+
+[node name="DashSound" type="AudioStreamPlayer3D" parent="." unique_id=256836705]
+stream = ExtResource("2_wr06p")
+volume_db = -7.476
+
+[node name="BackgroundSound" type="AudioStreamPlayer3D" parent="." unique_id=1836716724]
+stream = ExtResource("3_5hfox")
+volume_db = -23.926
+autoplay = true
+max_distance = 99999.0
+parameters/looping = true
+
+[node name="CheckpointSound" type="AudioStreamPlayer3D" parent="." unique_id=1807299851]
+stream = ExtResource("4_6dqce")

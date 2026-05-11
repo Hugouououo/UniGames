@@ -24,7 +24,7 @@ var is_third_person : bool = false
 @export var dash_duration : float = 0.2
 @export var dash_cooldown : float = 0.8
 @export var dash_smoothness : float = 12.0
-
+	
 @export_group("Input Actions")
 @export var input_dash : String = "dash"
 
@@ -71,6 +71,8 @@ var freeflying : bool = false
 
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
+
+@onready var dash_sound: AudioStreamPlayer3D = $DashSound
 
 func _ready() -> void:
 	# spawn point depende de onde tá o cilindro do jogador lá ele
@@ -159,6 +161,8 @@ func _physics_process(delta: float) -> void:
 		# Logica de Dash
 		if can_dash and can_dash_again and Input.is_action_just_pressed(input_dash) and move_dir != Vector3.ZERO:
 			is_dashing = true
+			dash_sound.pitch_scale = randf_range(0.8, 1.2)
+			dash_sound.play()
 			can_dash_again = false
 			dash_timer.start()
 			velocity.x = move_dir.x * dash_speed
