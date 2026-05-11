@@ -14,8 +14,8 @@ script = ExtResource("1_ranking_table")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=487744530]
 layout_mode = 0
-offset_right = 1154.0
-offset_bottom = 645.0
+offset_right = 1898.0
+offset_bottom = 1071.0
 texture = ExtResource("2_xo143")
 
 [node name="Panel" type="Panel" parent="." unique_id=910264817]
